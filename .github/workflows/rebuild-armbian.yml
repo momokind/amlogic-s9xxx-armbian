@@ -128,7 +128,7 @@ on:
           - vplus
           - xiaobao
           - zysj
-          - xgp
+          - xgp-v3
       armbian_kernel:
         description: "Select kernel version."
         required: false
