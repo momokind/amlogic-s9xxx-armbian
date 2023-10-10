@@ -134,6 +134,7 @@ on:
           - vplus
           - xiaobao
           - zysj
+          - xgp-v3
       armbian_kernel:
         description: "Select kernel version."
         required: false
@@ -187,12 +188,12 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "momokind"
         type: choice
         options:
           - ophub
           - angel
-          - yourname
+          - momokind
 
 env:
   TZ: America/New_York
