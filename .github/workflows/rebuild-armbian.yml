@@ -129,6 +129,7 @@ on:
           - xiaobao
           - zysj
           - xgp-v3
+          - jianpian-tv
       armbian_kernel:
         description: "Select kernel version."
         required: false
