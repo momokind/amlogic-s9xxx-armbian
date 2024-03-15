@@ -75,7 +75,7 @@ armbian_release_file="etc/armbian-release"
 ophub_release_file="etc/ophub-release"
 
 # U-BOOT files download repository
-uboot_repo="https://github.com/ophub/u-boot"
+uboot_repo="https://github.com/momokind/u-boot"
 # Firmware files download repository
 firmware_repo="https://github.com/ophub/firmware"
 
@@ -88,6 +88,7 @@ specific_tags="${default_tags}"
 # Set the list of kernels used by default(Fixed version)
 rk3588_kernel=("5.10.y")
 rk35xx_kernel=("5.10.y")
+rk35xx_sunniwell_kernel=("5.10.y")
 h6_kernel=("6.6.y")
 specific_6xy=("6.6.y" "6.1.y")
 specific_5xy=("5.15.y" "5.10.y" "5.4.y")
@@ -387,6 +388,7 @@ query_kernel() {
             beta) down_kernel_list=(${beta_kernel[@]}) ;;
             rk3588) down_kernel_list=(${rk3588_kernel[@]}) ;;
             rk35xx) down_kernel_list=(${rk35xx_kernel[@]}) ;;
+            rk35xx_sunniwell) down_kernel_list=(${rk35xx_kernel[@]}) ;;
             h6) down_kernel_list=(${h6_kernel[@]}) ;;
             5.x.y)
                 down_kernel_list=(${specific_5xy[@]})
@@ -439,6 +441,7 @@ query_kernel() {
             beta) beta_kernel=(${tmp_arr_kernels[@]}) ;;
             rk3588) rk3588_kernel=(${tmp_arr_kernels[@]}) ;;
             rk35xx) rk35xx_kernel=(${tmp_arr_kernels[@]}) ;;
+            rk35xx_sunniwell) rk35xx_kernel=(${tmp_arr_kernels[@]}) ;;
             h6) h6_kernel=(${tmp_arr_kernels[@]}) ;;
             5.x.y) specific_5xy=(${tmp_arr_kernels[@]}) ;;
             6.x.y) specific_6xy=(${tmp_arr_kernels[@]}) ;;
@@ -483,6 +486,7 @@ download_kernel() {
             beta) down_kernel_list=(${beta_kernel[@]}) ;;
             rk3588) down_kernel_list=(${rk3588_kernel[@]}) ;;
             rk35xx) down_kernel_list=(${rk35xx_kernel[@]}) ;;
+            rk35xx_sunniwell) down_kernel_list=(${rk35xx_kernel[@]}) ;;
             h6) down_kernel_list=(${h6_kernel[@]}) ;;
             5.x.y)
                 down_kernel_list=(${specific_5xy[@]})
@@ -1128,6 +1132,7 @@ loop_rebuild() {
             beta) kernel_list=(${beta_kernel[@]}) ;;
             rk3588) kernel_list=(${rk3588_kernel[@]}) ;;
             rk35xx) kernel_list=(${rk35xx_kernel[@]}) ;;
+            rk35xx_sunniwell) kernel_list=(${rk35xx_kernel[@]}) ;;
             h6) kernel_list=(${h6_kernel[@]}) ;;
             5.x.y)
                 kernel_list=(${specific_5xy[@]})

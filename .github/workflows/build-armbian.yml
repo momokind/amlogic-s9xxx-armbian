@@ -153,6 +153,8 @@ on:
           - xiaobao
           - zcube1-max
           - zysj
+          - z96a-fusb302
+          - z96a-husb311
       armbian_kernel:
         description: "Select kernel version."
         required: false
@@ -179,6 +181,7 @@ on:
         type: choice
         options:
           - ophub/kernel
+          - momokind/ophub-kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false
@@ -213,7 +216,7 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - momokind
 
 env:
   TZ: America/New_York
@@ -314,7 +317,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rebuild Armbian
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: momokind/amlogic-s9xxx-armbian@sunniwell-z96a
         if: ${{ steps.clean.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: armbian
